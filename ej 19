@@ -1,0 +1,25 @@
+pila = [("Avengers: Endgame", "Marvel Studios", 2019), ("Joker", "DC Films", 2019), ("Black Panther", "Marvel Studios", 2018), ("Coco", "Pixar", 2017), ("Interstellar", "Paramount Pictures", 2014), ("Batman v Superman: Dawn of Justice", "DC Films", 2016), ("Captain America: Civil War", "Marvel Studios", 2016)]
+
+def mostrar_peliculas_2014(pila):
+  while pila:
+    pelicula = pila.pop()
+    if pelicula[2] == 2014:
+      print(pelicula[0])
+
+def contar_peliculas_2018(pila):
+  contador = 0
+  while pila:
+    pelicula = pila.pop()
+    if pelicula[2] == 2018:
+      contador += 1
+  return contador
+
+def mostrar_peliculas_marvel_2016(pila):
+  while pila:
+    pelicula = pila.pop()
+    if pelicula[1] == "Marvel Studios" and pelicula[2] == 2016:
+      print(pelicula[0])
+
+mostrar_peliculas_2014(pila)
+print(contar_peliculas_2018(pila))
+mostrar_peliculas_marvel_2016(pila)

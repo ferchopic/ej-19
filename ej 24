@@ -1,0 +1,33 @@
+pila = [("Iron Man", 10), ("Captain America", 11), ("Thor", 8), ("Hulk", 6), ("Black Widow", 9), ("Hawkeye", 5), ("Spider-Man", 5), ("Doctor Strange", 3), ("Black Panther", 4), ("Ant-Man", 3), ("Captain Marvel", 2), ("Scarlet Witch", 5), ("Vision", 4), ("Falcon", 5), ("Winter Soldier", 4), ("War Machine", 6), ("Guardians of the Galaxy", 3), ("Rocket Raccoon", 5), ("Groot", 4)]
+
+def encontrar_posicion_rocket_groot(pila):
+  posicion_rocket = None
+  posicion_groot = None
+  for i in range(len(pila)):
+    personaje = pila.pop()
+    if personaje[0] == "Rocket Raccoon":
+      posicion_rocket = i + 1
+    if personaje[0] == "Groot":
+      posicion_groot = i + 1
+    if posicion_rocket and posicion_groot:
+      break
+  return posicion_rocket, posicion_groot
+
+def mostrar_personajes_mas_5_peliculas(pila):
+  while pila:
+    personaje = pila.pop()
+    if personaje[1] > 5:
+      print(personaje[0], personaje[1])
+
+def contar_peliculas_black_widow(pila):
+  while pila:
+    personaje = pila.pop()
+    if personaje[0] == "Black Widow":
+      return personaje[1]
+
+def mostrar_personajes_cdg(pila):
+  letras = ["C", "D", "G"]
+  while pila:
+    personaje = pila.pop()
+    if personaje[0][0] in letras:
+      print(personaje[0])
